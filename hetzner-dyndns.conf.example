@@ -1,0 +1,20 @@
+# Kopieren nach hetzner-dyndns.conf (neben dem Skript) oder /etc/hetzner-dyndns.conf
+# und danach: chmod 600 <datei>
+
+# API-Token aus der Hetzner Console: Projekt -> Sicherheit -> API-Tokens (Lesen & Schreiben)
+HETZNER_API_TOKEN="hier-token-eintragen"
+
+# DNS-Zone (Name oder ID)
+ZONE="example.com"
+
+# Zu aktualisierende Einträge, Leerzeichen-getrennt.
+# "@" = die Zone selbst, "*" = Wildcard. Volle Namen (home.example.com) gehen auch.
+RECORDS="@ home"
+
+# TTL in Sekunden (min. 60). Wird auch bei bestehenden Einträgen gesetzt.
+# Leer lassen (TTL=""), damit das Skript die TTL nicht anfasst.
+TTL=60
+
+# Welche Record-Typen gesetzt werden: A (IPv4) / AAAA (IPv6)
+IPV4=1
+IPV6=0
